@@ -12,3 +12,10 @@ This is achieved using [Mac OS X services](http://arstechnica.com/apple/2011/03/
 3. Go to the `Services` menu (for example if you're using Sublime: `Sublime > Services`) and choose a service like `Pandoc PDF`.
 4. After a few seconds, the PDF file will appear in the same folder as your markdown file
 5. Finally, you can assign a keyboard shortcut to invoke a service in `System Preferences > Keyboard > Keyboard Shortcuts > Services (on the left)`.
+
+
+## Templates
+
+`Pandoc PDF with Template` and `Pandoc ConTeXt PDF with Template` look for a `template.tex` or `contextTemplate.tex` file respectively in the same directory as the input file.
+
+To get a copy of the default [pandoc template](http://johnmacfarlane.net/pandoc/README.html#templates) to customize, use `pandoc -D latex > template.tex` or `pandoc -D context > contextTemplate.tex` respectively.
