@@ -1,4 +1,4 @@
-# Pandoc Mac OS X service
+# Pandoc Mac OS X Services
 
 Invoke [pandoc](http://johnmacfarlane.net/pandoc/) from any text editor with the opened file as input.
 
