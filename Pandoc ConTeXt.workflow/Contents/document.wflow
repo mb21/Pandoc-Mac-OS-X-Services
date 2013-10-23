@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>381</string>
+	<key>AMApplicationVersion</key>
+	<string>2.4</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}	tell application "System Events"		set theAppName to name of the first process whose frontmost is true	end tell		tell application "System Events"		keystroke "s" using command down --save file		tell process theAppName			set theFilePath to the value of attribute "AXDocument" of window 1			set textencoded to do shell script "php -r 'echo substr(trim(urldecode(" &amp; "\"" &amp; theFilePath &amp; "" &amp; "\")), 16);'"			return textencoded		end tell	end tell		return theFilePathend run</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>EBE9653F-9D9A-49D4-8A71-BD3D19D942D2</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>56D8A2F3-BA2D-4371-BE18-D9E6E0677FC2</string>
+				<key>ShowWhenRun</key>
+				<false/>
+				<key>UUID</key>
+				<string>7BAF485E-44A5-4384-9219-1A953A5CD0D1</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>527.000000:536.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>#!/bin/bash
+cd "$( dirname "$1" )"
+filename=$(basename "$1")
+export PATH=/usr/texbin:$PATH
+/usr/local/bin/pandoc --standalone -t context "$filename" -o "$filename.tex"</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>1</integer>
+					<key>shell</key>
+					<string>/bin/bash</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>20F8F47A-7A69-4825-846D-95E450C47976</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>9C8F360F-E095-46EE-B54D-3A3A4478AFF0</string>
+				<key>ShowWhenRun</key>
+				<false/>
+				<key>UUID</key>
+				<string>6EBA3A23-739B-4522-AF92-377C2DC09263</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>527.000000:223.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict>
+		<key>2E5771AF-94CF-4DCB-9491-4A000FD83F9B</key>
+		<dict>
+			<key>from</key>
+			<string>7BAF485E-44A5-4384-9219-1A953A5CD0D1 - 7BAF485E-44A5-4384-9219-1A953A5CD0D1</string>
+			<key>to</key>
+			<string>6EBA3A23-739B-4522-AF92-377C2DC09263 - 6EBA3A23-739B-4522-AF92-377C2DC09263</string>
+		</dict>
+	</dict>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
