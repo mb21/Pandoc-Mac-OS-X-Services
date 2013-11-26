@@ -168,8 +168,7 @@ cd "$( dirname "$1" )"
 filename=$(basename "$1")
 export PATH=/usr/texbin:$PATH
 /usr/local/bin/pandoc --standalone -t context "$filename" -o "$filename.tex"
-#if you wanna get rid of temp files use context's --purgeall option
-context --silent "$filename.tex"
+context --silent --purgeall "$filename.tex"
 rm "$filename.tex"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>

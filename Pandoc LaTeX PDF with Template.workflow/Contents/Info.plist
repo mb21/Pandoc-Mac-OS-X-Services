@@ -8,7 +8,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Run Pandoc LaTex with Template</string>
+				<string>Pandoc LaTeX PDF with Template</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>

@@ -167,7 +167,7 @@ end run</string>
 cd "$( dirname "$1" )"
 filename=$(basename "$1")
 export PATH=/usr/texbin:$PATH
-/usr/local/bin/pandoc "$filename" -t html5 -s -o "$filename.html"</string>
+/usr/local/bin/pandoc "$filename" -t html5 -s -o "$filename.html" --template ~/Desktop/Mauro/Notizen/technic/pandoc-html5-template.html</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>

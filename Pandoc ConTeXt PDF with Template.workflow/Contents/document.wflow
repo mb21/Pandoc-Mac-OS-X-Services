@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>346</string>
+	<string>381</string>
 	<key>AMApplicationVersion</key>
-	<string>2.3</string>
+	<string>2.4</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "System Events"		set theAppName to name of the first process whose frontmost is true	end tell		tell application "System Events"		keystroke "s" using command down --save file		tell process theAppName			set theFilePath to the value of attribute "AXDocument" of window 1			set textencoded to do shell script "php -r 'echo substr(trim(urldecode(" &amp; "\"" &amp; theFilePath &amp; "" &amp; "\")), 16);'"			return textencoded		end tell	end tell		return theFilePathend run</string>
+					<string>on run {input, parameters}	tell application "System Events"		set theAppName to name of the first process whose frontmost is true	end tell		tell application "System Events"		keystroke "s" using command down --save file		tell process theAppName			set theFilePath to the value of attribute "AXDocument" of window 1			set textencoded to do shell script "php -r 'echo substr(trim(urldecode(\"" &amp; theFilePath &amp; "\")), 16);'"						tell application "Finder"				set directory to do shell script "php -r 'echo dirname(\"" &amp; textencoded &amp; "\");'"				set contextTemplate to (directory &amp; "/contextTemplate.tex" as POSIX file)				try					contextTemplate as alias					set found to true				on error					set found to false				end try			end tell			if not found then				display dialog "You need to create a file named contextTemplate.tex in the same directory."				tell me to quit			end if			return textencoded		end tell	end tell		return theFilePathend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -107,7 +107,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>527.000000:536.000000</string>
+				<string>404.500000:789.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -285,7 +285,7 @@ rm "$filename.tex" "$filename.log"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>527.000000:223.000000</string>
+				<string>404.500000:322.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -295,7 +295,7 @@ rm "$filename.tex" "$filename.log"</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>57FE8730-DA9E-465D-A6A6-7935C190AE45</key>
+		<key>888755CD-B1DD-4B4B-AAD4-42B9110797F1</key>
 		<dict>
 			<key>from</key>
 			<string>7BAF485E-44A5-4384-9219-1A953A5CD0D1 - 7BAF485E-44A5-4384-9219-1A953A5CD0D1</string>
