@@ -8,7 +8,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Pandoc HTML Math</string>
+				<string>Pandoc HTML MathJax</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
