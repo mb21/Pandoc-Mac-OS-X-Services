@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>346</string>
+	<string>381</string>
 	<key>AMApplicationVersion</key>
-	<string>2.3</string>
+	<string>2.4</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -107,7 +107,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>527.000000:536.000000</string>
+				<string>404.500000:536.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -167,7 +167,7 @@ end run</string>
 cd "$( dirname "$1" )"
 filename=$(basename "$1")
 export PATH=/usr/texbin:$PATH
-/usr/local/bin/pandoc "$filename" -o "$filename.tex"</string>
+/usr/local/bin/pandoc "$filename" --standalone -o "$filename.tex"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -282,7 +282,7 @@ export PATH=/usr/texbin:$PATH
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>527.000000:223.000000</string>
+				<string>404.500000:223.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -292,7 +292,7 @@ export PATH=/usr/texbin:$PATH
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>782794E7-88EE-44B1-B2EC-AB3469F248DA</key>
+		<key>71A51989-72F0-470E-A10A-EF21040C7549</key>
 		<dict>
 			<key>from</key>
 			<string>7BAF485E-44A5-4384-9219-1A953A5CD0D1 - 7BAF485E-44A5-4384-9219-1A953A5CD0D1</string>
