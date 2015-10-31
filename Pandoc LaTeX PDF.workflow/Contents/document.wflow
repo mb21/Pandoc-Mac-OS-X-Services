@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>346</string>
+	<string>417</string>
 	<key>AMApplicationVersion</key>
-	<string>2.3</string>
+	<string>2.6</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "System Events"		set theAppName to name of the first process whose frontmost is true	end tell		tell application "System Events"		keystroke "s" using command down --save file		tell process theAppName			set theFilePath to the value of attribute "AXDocument" of window 1			set textencoded to do shell script "php -r 'echo substr(trim(urldecode(" &amp; "\"" &amp; theFilePath &amp; "" &amp; "\")), 16);'"			return textencoded		end tell	end tell		return theFilePathend run</string>
+					<string>on run {input, parameters}	tell application "System Events"		set theAppName to name of the first process whose frontmost is true	end tell		tell application "System Events"		keystroke "s" using command down --save file		tell process theAppName			set theFilePath to the value of attribute "AXDocument" of window 1			set textencoded to do shell script "php -r 'echo substr(trim(urldecode(" &amp; "\"" &amp; theFilePath &amp; "" &amp; "\")), 7);'"			return textencoded		end tell	end tell		return theFilePathend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -76,7 +76,7 @@
 				<key>OutputUUID</key>
 				<string>56D8A2F3-BA2D-4371-BE18-D9E6E0677FC2</string>
 				<key>ShowWhenRun</key>
-				<false/>
+				<true/>
 				<key>UUID</key>
 				<string>7BAF485E-44A5-4384-9219-1A953A5CD0D1</string>
 				<key>UnlocalizedApplications</key>
@@ -107,9 +107,9 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>527.000000:536.000000</string>
+				<string>338.500000:316.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -166,7 +166,7 @@ end run</string>
 					<string>#!/bin/bash
 cd "$( dirname "$1" )"
 filename=$(basename "$1")
-export PATH=/usr/texbin:$PATH
+export PATH=/Library/TeX/Distributions/Programs/texbin:$PATH
 /usr/local/bin/pandoc "$filename" -o "$filename.pdf"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
@@ -204,7 +204,7 @@ export PATH=/usr/texbin:$PATH
 				<key>OutputUUID</key>
 				<string>9C8F360F-E095-46EE-B54D-3A3A4478AFF0</string>
 				<key>ShowWhenRun</key>
-				<false/>
+				<true/>
 				<key>UUID</key>
 				<string>6EBA3A23-739B-4522-AF92-377C2DC09263</string>
 				<key>UnlocalizedApplications</key>
@@ -282,7 +282,7 @@ export PATH=/usr/texbin:$PATH
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>527.000000:223.000000</string>
+				<string>338.500000:499.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -292,7 +292,7 @@ export PATH=/usr/texbin:$PATH
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>F0C2F264-FDFE-4B5D-863C-D03B8F438146</key>
+		<key>D81DBB0D-0083-4A0F-87B4-93B7F746DB6A</key>
 		<dict>
 			<key>from</key>
 			<string>7BAF485E-44A5-4384-9219-1A953A5CD0D1 - 7BAF485E-44A5-4384-9219-1A953A5CD0D1</string>

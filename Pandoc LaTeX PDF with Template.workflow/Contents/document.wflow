@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>381</string>
+	<string>417</string>
 	<key>AMApplicationVersion</key>
-	<string>2.4</string>
+	<string>2.6</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "System Events"		set theAppName to name of the first process whose frontmost is true	end tell		tell application "System Events"		keystroke "s" using command down --save file		tell process theAppName			set theFilePath to the value of attribute "AXDocument" of window 1			set textencoded to do shell script "php -r 'echo substr(trim(urldecode(\"" &amp; theFilePath &amp; "\")), 16);'"						tell application "Finder"				set directory to do shell script "php -r 'echo dirname(\"" &amp; textencoded &amp; "\");'"				set contextTemplate to (directory &amp; "/template.tex" as POSIX file)				try					contextTemplate as alias					set found to true				on error					set found to false				end try			end tell			if not found then				display dialog "You need to create a file named template.tex in the same directory."				tell me to quit			end if			return textencoded		end tell	end tell		return theFilePathend run</string>
+					<string>on run {input, parameters}	tell application "System Events"		set theAppName to name of the first process whose frontmost is true	end tell		tell application "System Events"		keystroke "s" using command down --save file		tell process theAppName			set theFilePath to the value of attribute "AXDocument" of window 1			set textencoded to do shell script "php -r 'echo substr(trim(urldecode(\"" &amp; theFilePath &amp; "\")), 7);'"						tell application "Finder"				set directory to do shell script "php -r 'echo dirname(\"" &amp; textencoded &amp; "\");'"				set contextTemplate to (directory &amp; "/template.tex" as POSIX file)				try					contextTemplate as alias					set found to true				on error					set found to false				end try			end tell			if not found then				display dialog "You need to create a file named template.tex in the same directory."				tell me to quit			end if			return textencoded		end tell	end tell		return theFilePathend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -107,9 +107,9 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>404.500000:789.000000</string>
+				<string>338.500000:316.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -166,7 +166,7 @@ end run</string>
 					<string>#!/bin/bash
 cd "$( dirname "$1" )"
 filename=$(basename "$1")
-export PATH=/usr/texbin:$PATH
+export PATH=/Library/TeX/Distributions/Programs/texbin:$PATH
 /usr/local/bin/pandoc "$filename" --template template.tex -o "$filename.pdf"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
@@ -282,7 +282,7 @@ export PATH=/usr/texbin:$PATH
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>404.500000:331.000000</string>
+				<string>338.500000:499.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -292,7 +292,7 @@ export PATH=/usr/texbin:$PATH
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>189C6CA2-2599-4C95-991E-9C2E24AE1763</key>
+		<key>FC641CE7-B721-435A-82FB-5856291A431A</key>
 		<dict>
 			<key>from</key>
 			<string>7BAF485E-44A5-4384-9219-1A953A5CD0D1 - 7BAF485E-44A5-4384-9219-1A953A5CD0D1</string>
